@@ -1,0 +1,9 @@
+name: Run tests
+on: [push]
+jobs: 
+    check-bats-version:
+        runs-on: ubuntu-latest
+        steps:
+          - run: echo Testing, testing, beep boop baap....
+          - run: npm install
+          - run: npm test

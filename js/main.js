@@ -6,6 +6,9 @@
 //              "3_rabbit.png", "6_bear.png", 
 //             ]
 
+// export const hello = () => {
+//     return 'Hello, World!'
+// };
 const imgs =["1_pig.png","10_tiger.png","8_panda.png"]
 
 const cardTemplate = document.querySelector("#card");
@@ -16,18 +19,17 @@ const winMenu = document.querySelector('#win');
 let all_cards_times2 = [];
 let start = false;
 let counter = document.querySelector('h2.time')
-let scores = JSON.parse(localStorage.getItem('scores'));
-document.querySelector('button.btn-scores').addEventListener('click', function(){localStorage.clear(); location.reload();});
+// let scores = JSON.parse(localStorage.getItem('scores'));
+// document.querySelector('button.btn-scores').addEventListener('click', function(){localStorage.clear(); location.reload();});
+
+let scores = [];
 
 
-
-if (scores == undefined){
-    scores = [];
-}else{
-    setHighscore(scores)
-}
-
-// let start = Date.now();
+// if (scores == undefined){
+//     scores = [];
+// }else{
+//     setHighscore(scores)
+// }
 
 for(let score of scores){
     insertScore(score)
