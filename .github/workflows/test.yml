@@ -6,4 +6,4 @@ jobs:
         steps:
           - run: echo Testing, testing, beep boop baap....
           - run: npm install
-          - run: npm test
+          - run: npm run test
