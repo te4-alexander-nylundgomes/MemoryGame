@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+    height: fit-content;
+    perspective: 1200px;
+}
+
+$color1: #ffefa0;
+$color2: #ffd57e;
+$color3: #fca652;
+$color4: #ac4b1c;
+$titleFont: 'Pacifico', cursive;
+$textFont: 'Roboto', sans-serif;
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 15% 1fr;
+    grid-template-areas: 
+    "header header"
+    "aside main"
+    ;
+
+    header{
+        box-shadow: 0px 7px 17px 0px rgba(0,0,0,0.24);
+        grid-area: header;
+        background-color: $color4;
+        display: flex;
+        justify-content: space-between;
+        z-index: 10;
+        h1,h2{
+            color: whitesmoke;
+            margin: 0;
+            width: fit-content;
+            height: 100%;
+            @include center;
+            font-family: $titleFont;
+        }
+        
+        h1{
+            padding-left: 5%;
+            font-size: 8vh;
+        }
+
+        h2{
+            font-size: 8vh;
+            padding-right: 15%;
+        }
+    }
+
+    aside{
+        font-family: $textFont;
+        width: 100%;
+        grid-area: aside;
+        background-color: $color3;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1.highscore{
+            width: fit-content;
+            height: fit-content;
+            margin: 2.5vh auto 0 auto;
+            font-size: 2vw;
+            text-decoration: underline;
+        }
+
+        h3.currentHighscore{
+            margin: 0.5vh auto 0 auto;
+            width: fit-content;
+            padding: 5%;
+            @include center();
+            height: fit-content;
+            text-align: center;
+            font-size: 1.75vh;
+        }
+
+        ul{
+            height: 50%;
+            overflow: scroll;
+            li{
+                font-size: 1.75vh;
+                padding: 2.5%;
+            }
+        }
+
+        button{
+            width: calc(80% - 3vh);
+            height: fit-content;
+            padding: 0.5vh 1.5vh 0.5vh 1.5vh;
+            margin: 2.5vh auto 0 auto;
+        }
+    }
+
+    main.cards{
+        height: fit-content;
+        min-height: 100%;
+        grid-area: main;
+        background-color: $color1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+
+        article.card{
+            width: 10vw;
+            height: 10vw;
+            border-radius: 0.5vh;
+            background-position: center;
+            margin: 1.5vw;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0px 0px 12px 8px rgba(0,0,0,0.16);
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+
+            section{
+                position: absolute;
+                width: inherit;
+                height: inherit;
+                @include center();
+                backface-visibility: hidden;
+            }
+
+            section.back{
+                transform: rotateY(180deg);
+                z-index: -1;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            section.front{
+                background-image: url(../imgs/back.png) !important;
+            }
+        }
+
+        article.turned_up{
+            transform: translateZ(100px) rotateY(180deg);
+        }
+    }
+
+    
+}
+main.win{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.40);
+    @include center();
+    flex-direction: column;
+
+    h1,h3{
+        color: white;
+        text-align: center;
+        height: fit-content;
+        width: fit-content;
+        margin: 0;
+    }
+    
+    h3{
+        font-size: 4vh;
+        font-family: $textFont;
+    }
+    
+    h1{
+        font-family: $titleFont;
+        font-size: 20vh;
+    }
+
+    button{
+        width: 30%;
+        padding: 3vh 1vw 3vh 1vw;
+        height: fit-content;
+        font-size: 5vh;
+        font-family: $textFont;
+        margin: 5% 0 0 0;
+        border-radius: 0.75vw;
+    }
+}
+.wrapper.blur{
+    filter: blur(4px);
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Memory Game</h1>
+            <h2 class="time">0.0</h2>
+        </header>
+        
+        <aside>
+            <h1 class="highscore">Highscore</h1>
+            <h3 class="currentHighscore"></h3>
+            <ul></ul>
+            <button class="btn-scores">Reset scores</button>
+        </aside>
+        
+        <main class="cards"></main>
+    </div>
+</body>
+
+<template id="card">
+    <article class="card turned_over">
+        <section class="front"></section>
+        <section class="back"></section>
+    </article>
+</template>
+
+<template id="score">
+    <li class="score"></li>
+</template>
+
+<template id="win">
+    <main class="win">
+        <h1>Congrats, You won!</h1>
+        <h3></h3>
+        <button class="btn-play">Play again</button>
+    </main>
+</template>
+
+<script src="../js/main.js"></script>
+</html>

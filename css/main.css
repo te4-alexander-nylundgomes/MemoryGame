@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+}
+
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 85%;
+      grid-template-columns: 15% 85%;
+  -ms-grid-rows: 15% 1fr;
+      grid-template-rows: 15% 1fr;
+      grid-template-areas: "header header" "aside main";
+}
+
+.wrapper header {
+  -webkit-box-shadow: 0px 7px 17px 0px rgba(0, 0, 0, 0.24);
+          box-shadow: 0px 7px 17px 0px rgba(0, 0, 0, 0.24);
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+  background-color: #ac4b1c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 10;
+}
+
+.wrapper header h1, .wrapper header h2 {
+  color: whitesmoke;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Pacifico", cursive;
+}
+
+.wrapper header h1 {
+  padding-left: 5%;
+  font-size: 8vh;
+}
+
+.wrapper header h2 {
+  font-size: 8vh;
+  padding-right: 15%;
+}
+
+.wrapper aside {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: aside;
+  background-color: #fca652;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper aside h1.highscore {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 2.5vh auto 0 auto;
+  font-size: 2vw;
+  text-decoration: underline;
+}
+
+.wrapper aside h3.currentHighscore {
+  margin: 0.5vh auto 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  font-size: 1.75vh;
+}
+
+.wrapper aside ul {
+  height: 50%;
+  overflow: scroll;
+}
+
+.wrapper aside ul li {
+  font-size: 1.75vh;
+  padding: 2.5%;
+}
+
+.wrapper aside button {
+  width: calc(80% - 3vh);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.5vh 1.5vh 0.5vh 1.5vh;
+  margin: 2.5vh auto 0 auto;
+}
+
+.wrapper main.cards {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: main;
+  background-color: #ffefa0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.wrapper main.cards article.card {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 0.5vh;
+  background-position: center;
+  margin: 1.5vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.16);
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.wrapper main.cards article.card section {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.wrapper main.cards article.card section.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.wrapper main.cards article.card section.front {
+  background-image: url(../imgs/back.png) !important;
+}
+
+.wrapper main.cards article.turned_up {
+  -webkit-transform: translateZ(100px) rotateY(180deg);
+          transform: translateZ(100px) rotateY(180deg);
+}
+
+main.win {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main.win h1, main.win h3 {
+  color: white;
+  text-align: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+}
+
+main.win h3 {
+  font-size: 4vh;
+  font-family: "Roboto", sans-serif;
+}
+
+main.win h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 20vh;
+}
+
+main.win button {
+  width: 30%;
+  padding: 3vh 1vw 3vh 1vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 5vh;
+  font-family: "Roboto", sans-serif;
+  margin: 5% 0 0 0;
+  border-radius: 0.75vw;
+}
+
+.wrapper.blur {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+/*# sourceMappingURL=main.css.map */
