@@ -16,7 +16,7 @@ import { isMainThread } from 'worker_threads'
 import { hasUncaughtExceptionCaptureCallback } from 'process'
 import { setTimeout } from 'timers'
 
-const html = fs.readFileSync(path.resolve('../html', './index.html'), 'utf8');
+const html = fs.readFileSync(path.resolve('html', './index.html'), 'utf8');
 let dom 
 let container
 describe('index.html', () => {
@@ -30,7 +30,7 @@ describe('index.html', () => {
             runScripts: 'dangerously'
         }
     
-        JSDOM.fromFile('../html/index.html', options).then((dom) => {
+        JSDOM.fromFile('./html/index.html', options).then((dom) => {
             setTimeout(() => {
                 container = dom.window.document.body
                 done();
